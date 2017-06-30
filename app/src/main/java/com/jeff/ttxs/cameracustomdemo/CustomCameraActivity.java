@@ -34,7 +34,7 @@ public class CustomCameraActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_custom_layout);
         ButterKnife.bind(this);
-        checkCameraPermission();
+
         initCamera();
     }
 
@@ -49,16 +49,7 @@ public class CustomCameraActivity extends Activity
                 break;
         }
     }
-    private void checkCameraPermission()
-    {
-        //大于6.0
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission
-                .CAMERA)== PackageManager.PERMISSION_GRANTED){
 
-        }else {
-            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.CAMERA},1);
-        }
-    }
 
     private void initCamera()
     {

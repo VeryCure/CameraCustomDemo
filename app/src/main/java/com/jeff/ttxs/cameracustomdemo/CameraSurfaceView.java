@@ -170,19 +170,11 @@ public class CameraSurfaceView extends SurfaceView implements SurfaceHolder
                             .getExternalStorageDirectory());
                     //保存路径
                     String dirPath = Environment.getExternalStorageDirectory()
-                        .getAbsolutePath()+"/jeff/";
-                    File dirFile = new File(dirPath);
-                    if (!dirFile.exists()){
-                        dirFile.mkdirs();
-                    }
-                    String path = dirPath + System.currentTimeMillis()
-                            + "" +
-                            ".png";
+                        .getAbsolutePath()+File.separator+"jeff"+File
+                            .separator;
+                    String path = dirPath + System.currentTimeMillis() + ".png";
+                    BaseUtils.makeSureFileDirExists(dirPath);
                     File file = new File(path);
-                    if (!file.exists())
-                    {
-                        file.createNewFile();
-                    }
                     bos = new BufferedOutputStream(new FileOutputStream(file));
                     bm.compress(Bitmap.CompressFormat.PNG,100,bos);
                 }else {
