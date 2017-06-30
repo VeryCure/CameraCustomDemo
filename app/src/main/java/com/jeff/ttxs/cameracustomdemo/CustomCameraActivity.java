@@ -10,11 +10,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 
 import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by ttxs on 2017/6/29.
@@ -36,6 +38,17 @@ public class CustomCameraActivity extends Activity
         initCamera();
     }
 
+    @OnClick({R.id.take_picture,R.id.exchange_camera})
+    public void OnClick(View view){
+        switch (view.getId()){
+            case R.id.take_picture:
+                mSurfaceView.takePicture();
+                break;
+            case R.id.exchange_camera:
+                //更换摄像头
+                break;
+        }
+    }
     private void checkCameraPermission()
     {
         //大于6.0

@@ -8,5 +8,23 @@
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_height="match_parent"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/exchange_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_change_camera"/>
+        <ImageView
+            android:id="@+id/take_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/take_picture"
+            android:layout_marginBottom="15dp"/>
+    </RelativeLayout>
 
 </FrameLayout>
